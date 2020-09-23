@@ -16,7 +16,10 @@ import androidx.compose.ui.unit.sp
 import androidx.ui.tooling.preview.Preview
 import com.sergiofraile.tictactoecompose.models.Game
 import com.sergiofraile.tictactoecompose.models.Player
+import com.sergiofraile.tictactoecompose.ui.components.HeaderText
 import com.sergiofraile.tictactoecompose.ui.components.SquareView
+
+
 
 @Composable
 fun GameScreen() {
@@ -27,28 +30,7 @@ fun GameScreen() {
         verticalArrangement = Arrangement.SpaceAround,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        Row(
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = "You are playing as ",
-                style = TextStyle(
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 24.sp,
-                    textAlign = TextAlign.Center
-                )
-            )
-            Text(
-                text = Player.Person.visualCue(),
-                style = TextStyle(
-                    color = Player.Person.color(),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 40.sp,
-                    textAlign = TextAlign.Center
-                )
-            )
-        }
+        HeaderText()
         Column {
             for (i in 0 until game.boardSquareSize) {
                 Row {
